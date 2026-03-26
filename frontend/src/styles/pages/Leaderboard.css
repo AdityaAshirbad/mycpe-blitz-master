@@ -1,0 +1,48 @@
+.leaderboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.leaderboard-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+.personal-section {
+  grid-column: 1;
+}
+
+.leaderboard-section {
+  grid-column: 2;
+}
+
+@media (max-width: 1024px) {
+  .leaderboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-section {
+    grid-column: auto;
+  }
+
+  .leaderboard-section {
+    grid-column: auto;
+  }
+}

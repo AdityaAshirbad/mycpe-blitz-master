@@ -1,0 +1,826 @@
+{
+  "currentPlayerId": "p-001",
+  "overview": {
+    "season": "Spring 2026",
+    "leaderboardReset": "Friday 6:00 PM",
+    "coinFloor": "Monday 12:00 AM UTC",
+    "successMetrics": [
+      {
+        "label": "Weekly active players",
+        "value": "42%",
+        "tone": "good"
+      },
+      {
+        "label": "Avg games per player",
+        "value": "3.7",
+        "tone": "good"
+      },
+      {
+        "label": "Median match time",
+        "value": "24s",
+        "tone": "good"
+      },
+      {
+        "label": "Challenge acceptance",
+        "value": "63%",
+        "tone": "good"
+      }
+    ],
+    "kpis": [
+      {
+        "label": "Players online",
+        "value": "186",
+        "detail": "124 available, 38 in-game, 24 DND"
+      },
+      {
+        "label": "Active live games",
+        "value": "31",
+        "detail": "6 private, 25 open to spectators"
+      },
+      {
+        "label": "Coins in circulation",
+        "value": "1.84M",
+        "detail": "Healthy economy, 7.6% weekly growth"
+      },
+      {
+        "label": "Department battles",
+        "value": "4",
+        "detail": "Finance leads Support by 18 points"
+      }
+    ],
+    "priorities": [
+      "Zero-friction play start with time control, stake, and beginner mode preset in one action.",
+      "Visible social context around rivals, spectators, departments, and challenge inboxes.",
+      "Transparent coin, rank, and badge progression on every major surface."
+    ]
+  },
+  "players": [
+    {
+      "id": "p-001",
+      "name": "Aarav Nair",
+      "email": "aarav.nair@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Aarav%20Nair",
+      "role": "Product Analyst",
+      "department": "Product",
+      "status": "Available",
+      "points": 1385,
+      "title": "Knight",
+      "nextTitle": "Bishop",
+      "pointsToNext": 115,
+      "coins": 7420,
+      "weeklyRank": 7,
+      "seasonRank": 14,
+      "wins": 58,
+      "losses": 22,
+      "draws": 7,
+      "winRate": 67,
+      "streak": 4,
+      "bestStreak": 8,
+      "dailyBonusClaimed": true,
+      "weeklyCoinFloorProtected": false,
+      "beginnerMode": true,
+      "mostPlayedOpening": "Italian Game",
+      "averageGameDuration": "7m 42s",
+      "timeControlBreakdown": [
+        {
+          "mode": "Bullet",
+          "winRate": "54%",
+          "games": 12
+        },
+        {
+          "mode": "Blitz",
+          "winRate": "71%",
+          "games": 49
+        },
+        {
+          "mode": "Classical",
+          "winRate": "63%",
+          "games": 26
+        }
+      ],
+      "badges": [
+        {
+          "id": "first-victory",
+          "name": "First Victory",
+          "description": "Won your first match.",
+          "progress": "Unlocked"
+        },
+        {
+          "id": "hat-trick",
+          "name": "Hat Trick",
+          "description": "Won 3 games in a row.",
+          "progress": "Unlocked"
+        },
+        {
+          "id": "nemesis",
+          "name": "Nemesis Defeated",
+          "description": "Beat the colleague who had your number.",
+          "progress": "Unlocked"
+        },
+        {
+          "id": "century",
+          "name": "Century Club",
+          "description": "Play 100 games total.",
+          "progress": "71 / 100"
+        }
+      ],
+      "rivals": [
+        {
+          "name": "Priya Raman",
+          "status": "Nemesis",
+          "note": "You are 2-5 against her. One more win clears the tag."
+        },
+        {
+          "name": "Sahil Mehta",
+          "status": "Rival",
+          "note": "He just jumped two spots above you on the weekly ladder."
+        }
+      ],
+      "notifications": [
+        "Priya Raman accepted your Blitz challenge for 250 coins.",
+        "Weekly tournament seeding closes in 9 hours.",
+        "You are 115 points away from Bishop title."
+      ]
+    },
+    {
+      "id": "p-002",
+      "name": "Priya Raman",
+      "email": "priya.raman@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Priya%20Raman",
+      "role": "Senior Designer",
+      "department": "Design",
+      "status": "In Queue",
+      "title": "Bishop",
+      "points": 1510,
+      "coins": 8910,
+      "preferredMode": "Blitz",
+      "wins": 71,
+      "losses": 26,
+      "winRate": 73
+    },
+    {
+      "id": "p-003",
+      "name": "Daniel Cruz",
+      "email": "daniel.cruz@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Daniel%20Cruz",
+      "role": "Finance Manager",
+      "department": "Finance",
+      "status": "Available",
+      "title": "Knight",
+      "points": 1405,
+      "coins": 4320,
+      "preferredMode": "Classical",
+      "wins": 40,
+      "losses": 31,
+      "winRate": 57
+    },
+    {
+      "id": "p-004",
+      "name": "Megha Kapoor",
+      "email": "megha.kapoor@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Megha%20Kapoor",
+      "role": "HR Partner",
+      "department": "HR",
+      "status": "Spectating",
+      "title": "Rook",
+      "points": 1730,
+      "coins": 11600,
+      "preferredMode": "Bullet",
+      "wins": 66,
+      "losses": 23,
+      "winRate": 74
+    },
+    {
+      "id": "p-005",
+      "name": "Ishaan Verma",
+      "email": "ishaan.verma@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Ishaan%20Verma",
+      "role": "Support Lead",
+      "department": "Support",
+      "status": "Beginner Mode",
+      "title": "Pawn",
+      "points": 980,
+      "coins": 870,
+      "preferredMode": "Classical",
+      "wins": 18,
+      "losses": 29,
+      "winRate": 38
+    },
+    {
+      "id": "p-006",
+      "name": "Nina Joseph",
+      "email": "nina.joseph@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Nina%20Joseph",
+      "role": "Operations Director",
+      "department": "Operations",
+      "status": "Do Not Disturb",
+      "title": "Queen",
+      "points": 2050,
+      "coins": 14300,
+      "preferredMode": "Blitz",
+      "wins": 93,
+      "losses": 25,
+      "winRate": 79
+    },
+    {
+      "id": "p-007",
+      "name": "Sahil Mehta",
+      "email": "sahil.mehta@mycpeone.internal",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Sahil%20Mehta",
+      "role": "Engineering Lead",
+      "department": "Engineering",
+      "status": "Available",
+      "title": "Bishop",
+      "points": 1462,
+      "coins": 7020,
+      "preferredMode": "Bullet",
+      "wins": 54,
+      "losses": 25,
+      "winRate": 68
+    }
+  ],
+  "matchmaking": {
+    "queue": {
+      "isInQueue": false,
+      "queuePosition": 0,
+      "estimatedWaitTime": 0,
+      "betAmount": 250,
+      "timeFormat": "blitz"
+    },
+    "queueSummary": {
+      "averageWait": "24 sec",
+      "rankWindow": "Within 2 title tiers for first 15 sec",
+      "acceptanceWindow": "10 sec"
+    }
+  },
+  "social": {
+    "pendingChallenges": [
+      {
+        "id": "c-100",
+        "fromPlayerId": "p-002",
+        "mode": "Blitz",
+        "bet": 250,
+        "message": "No excuses this time.",
+        "expiresIn": "2h 14m",
+        "record": "71W / 26L",
+        "status": "pending"
+      },
+      {
+        "id": "c-101",
+        "fromPlayerId": "p-003",
+        "mode": "Classical",
+        "bet": 100,
+        "message": "Coffee break game?",
+        "expiresIn": "18h",
+        "record": "40W / 31L",
+        "status": "pending"
+      }
+    ],
+    "sentChallenges": [
+      {
+        "id": "c-1774470890470",
+        "toPlayerId": "p-003",
+        "mode": "Blitz",
+        "bet": 250,
+        "status": "Sent just now"
+      },
+      {
+        "id": "c-110",
+        "toPlayerId": "p-007",
+        "mode": "Bullet",
+        "bet": 500,
+        "status": "Snoozed for 1h"
+      },
+      {
+        "id": "c-111",
+        "toPlayerId": "p-004",
+        "mode": "Blitz",
+        "bet": 250,
+        "status": "Waiting for challenger sync"
+      }
+    ],
+    "friends": [
+      "p-002",
+      "p-003",
+      "p-007"
+    ]
+  },
+  "liveGames": [
+    {
+      "id": "g-001",
+      "white": "Nina Joseph",
+      "black": "Aarush Patel",
+      "mode": "Blitz",
+      "move": "24...Qh4",
+      "spectators": 18,
+      "privacy": "Public",
+      "tension": "Check in 3 moves likely"
+    },
+    {
+      "id": "g-002",
+      "white": "Priya Raman",
+      "black": "Daniel Cruz",
+      "mode": "Bullet",
+      "move": "17.Bxf7+",
+      "spectators": 42,
+      "privacy": "Public",
+      "tension": "Both under 20 seconds"
+    },
+    {
+      "id": "g-003",
+      "white": "Ritika Das",
+      "black": "Sahil Mehta",
+      "mode": "Classical",
+      "move": "12...e5",
+      "spectators": 5,
+      "privacy": "Private",
+      "tension": "Spectators locked"
+    }
+  ],
+  "leaderboard": {
+    "weekly": [
+      {
+        "rank": 1,
+        "id": "p-006",
+        "name": "Nina Joseph",
+        "department": "Operations",
+        "title": "Queen",
+        "points": 2050,
+        "delta": "+4",
+        "coins": 14300,
+        "winRate": "79%"
+      },
+      {
+        "rank": 2,
+        "id": "p-004",
+        "name": "Megha Kapoor",
+        "department": "HR",
+        "title": "Rook",
+        "points": 1730,
+        "delta": "+1",
+        "coins": 11600,
+        "winRate": "74%"
+      },
+      {
+        "rank": 3,
+        "id": "p-002",
+        "name": "Priya Raman",
+        "department": "Design",
+        "title": "Bishop",
+        "points": 1510,
+        "delta": "-1",
+        "coins": 8910,
+        "winRate": "73%"
+      },
+      {
+        "rank": 4,
+        "id": "p-007",
+        "name": "Sahil Mehta",
+        "department": "Engineering",
+        "title": "Bishop",
+        "points": 1462,
+        "delta": "+2",
+        "coins": 7020,
+        "winRate": "68%"
+      },
+      {
+        "rank": 5,
+        "id": "p-003",
+        "name": "Daniel Cruz",
+        "department": "Finance",
+        "title": "Knight",
+        "points": 1405,
+        "delta": "0",
+        "coins": 4320,
+        "winRate": "57%"
+      },
+      {
+        "rank": 7,
+        "id": "p-001",
+        "name": "Aarav Nair",
+        "department": "Product",
+        "title": "Knight",
+        "points": 1385,
+        "delta": "+3",
+        "coins": 7420,
+        "winRate": "67%"
+      }
+    ],
+    "hallOfFame": [
+      {
+        "week": "Week 11",
+        "champion": "Nina Joseph",
+        "runnerUp": "Priya Raman",
+        "third": "Megha Kapoor"
+      },
+      {
+        "week": "Week 10",
+        "champion": "Megha Kapoor",
+        "runnerUp": "Sahil Mehta",
+        "third": "Aarav Nair"
+      },
+      {
+        "week": "Week 9",
+        "champion": "Priya Raman",
+        "runnerUp": "Daniel Cruz",
+        "third": "Nina Joseph"
+      }
+    ],
+    "departments": [
+      {
+        "name": "Finance",
+        "score": 118,
+        "trend": "+12",
+        "leader": "Daniel Cruz"
+      },
+      {
+        "name": "Support",
+        "score": 100,
+        "trend": "+7",
+        "leader": "Ishaan Verma"
+      },
+      {
+        "name": "Design",
+        "score": 97,
+        "trend": "+5",
+        "leader": "Priya Raman"
+      },
+      {
+        "name": "Product",
+        "score": 95,
+        "trend": "+14",
+        "leader": "Aarav Nair"
+      }
+    ]
+  },
+  "tournaments": [
+    {
+      "name": "Friday Blitz Cup",
+      "status": "Registration Open",
+      "start": "Friday 5:00 PM",
+      "format": "16-player knockout",
+      "reward": "Hall of Fame badge + 1500 coins"
+    },
+    {
+      "name": "Department Clash: Product vs Design",
+      "status": "Round 2 live",
+      "start": "Now",
+      "format": "Best-of-12 team series",
+      "reward": "Portal banner takeover"
+    },
+    {
+      "name": "Flash Tournament",
+      "status": "Admin-ready",
+      "start": "One-click launch",
+      "format": "1-hour bullet swarm",
+      "reward": "Temporary portal crown"
+    }
+  ],
+  "activityFeed": [
+    {
+      "author": "Nina Joseph",
+      "action": "shared a win card after a 9-move checkmate",
+      "meta": "Champion tier, 1000-coin pot"
+    },
+    {
+      "author": "Priya Raman",
+      "action": "earned Giant Slayer",
+      "meta": "Beat a player two title tiers above her"
+    },
+    {
+      "author": "Finance Department",
+      "action": "overtook Support in department standings",
+      "meta": "+18 points this week"
+    }
+  ],
+  "admin": {
+    "moderationQueue": [
+      {
+        "id": "f-001",
+        "players": "Anaya / Dev",
+        "reason": "Repeated 1000-coin alternated wins",
+        "severity": "High"
+      },
+      {
+        "id": "f-002",
+        "players": "Tara / Yusuf",
+        "reason": "Five disconnect forfeits in 48h",
+        "severity": "Medium"
+      },
+      {
+        "id": "f-003",
+        "players": "Riya / Neil",
+        "reason": "Suspiciously fast 30-move classical game",
+        "severity": "Medium"
+      }
+    ],
+    "actions": [
+      "Launch Flash Tournament",
+      "Create Department Challenge",
+      "Reset player coin balance",
+      "Export weekly participation CSV"
+    ]
+  },
+  "profile": {
+    "headToHead": [
+      {
+        "opponent": "Priya Raman",
+        "record": "2W - 5L",
+        "status": "Nemesis",
+        "note": "Beat her once more to clear the tag."
+      },
+      {
+        "opponent": "Daniel Cruz",
+        "record": "4W - 1L",
+        "status": "Favored",
+        "note": "Strong classical record."
+      },
+      {
+        "opponent": "Sahil Mehta",
+        "record": "3W - 3L",
+        "status": "Even",
+        "note": "Most contested rivalry."
+      }
+    ],
+    "matchHistory": [
+      {
+        "id": "mh-001",
+        "opponentId": "p-007",
+        "opponent": "Sahil Mehta",
+        "result": "Win",
+        "mode": "Blitz",
+        "bet": 250,
+        "change": "+15 RP / +250 coins"
+      },
+      {
+        "id": "mh-002",
+        "opponentId": "p-002",
+        "opponent": "Priya Raman",
+        "result": "Loss",
+        "mode": "Bullet",
+        "bet": 500,
+        "change": "-10 RP / -500 coins"
+      },
+      {
+        "id": "mh-003",
+        "opponentId": "p-003",
+        "opponent": "Daniel Cruz",
+        "result": "Draw",
+        "mode": "Classical",
+        "bet": 100,
+        "change": "+2 RP / 0 coins"
+      },
+      {
+        "id": "mh-004",
+        "opponentId": "p-005",
+        "opponent": "Ishaan Verma",
+        "result": "Win",
+        "mode": "Classical",
+        "bet": 100,
+        "change": "+15 RP / +100 coins"
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "m-1774498426818",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-26T04:13:46.820Z"
+    },
+    {
+      "id": "m-1774498426808",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-26T04:13:46.810Z"
+    },
+    {
+      "id": "m-1774472174242",
+      "opponentId": "p-002",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-002",
+      "timeControl": "classical",
+      "betAmount": 100,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:56:14.244Z"
+    },
+    {
+      "id": "m-1774472174237",
+      "opponentId": "p-002",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-002",
+      "timeControl": "classical",
+      "betAmount": 100,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:56:14.239Z"
+    },
+    {
+      "id": "m-1774472157439",
+      "opponentId": "p-002",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-002",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:55:57.440Z"
+    },
+    {
+      "id": "m-1774472157434",
+      "opponentId": "p-002",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-002",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:55:57.435Z"
+    },
+    {
+      "id": "m-1774472123426",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:55:23.428Z"
+    },
+    {
+      "id": "m-1774472123416",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:55:23.419Z"
+    },
+    {
+      "id": "m-1774472073421",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:54:33.424Z"
+    },
+    {
+      "id": "m-1774472073366",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:54:33.379Z"
+    },
+    {
+      "id": "m-1774471846506",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:50:46.508Z"
+    },
+    {
+      "id": "m-1774471846497",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:50:46.499Z"
+    },
+    {
+      "id": "m-1774471681137",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:48:01.138Z"
+    },
+    {
+      "id": "m-1774471681131",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "public",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:48:01.133Z"
+    },
+    {
+      "id": "m-1774471513890",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "private",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:45:13.891Z"
+    },
+    {
+      "id": "m-1774471513855",
+      "opponentId": "p-003",
+      "whitePlayerId": "p-001",
+      "blackPlayerId": "p-003",
+      "timeControl": "blitz",
+      "betAmount": 250,
+      "privacyMode": "private",
+      "beginnerMode": true,
+      "fen": "start",
+      "moveHistory": [],
+      "status": "active",
+      "result": null,
+      "createdAt": "2026-03-25T20:45:13.860Z"
+    }
+  ]
+}

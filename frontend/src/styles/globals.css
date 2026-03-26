@@ -1,0 +1,105 @@
+:root {
+  --primary-color: #0f4c81;
+  --secondary-color: #1b7f8c;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #c77d1f;
+  --info-color: #2563eb;
+
+  --dark-bg: #f4efe7;
+  --darker-bg: #e5ddd0;
+  --light-bg: #fffdfa;
+  --lighter-bg: #f1eadf;
+  --surface-strong: #13232f;
+  --surface-tint: rgba(15, 76, 129, 0.08);
+  --surface-shadow: 0 20px 50px rgba(19, 35, 47, 0.08);
+
+  --text-primary: #14212b;
+  --text-secondary: #41515f;
+  --text-tertiary: #6b7a86;
+
+  --border: 1px solid rgba(20, 33, 43, 0.12);
+  --border-strong: 1px solid rgba(20, 33, 43, 0.2);
+  --border-radius: 18px;
+  --transition: all 0.24s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(circle at top left, rgba(27, 127, 140, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(15, 76, 129, 0.12), transparent 24%),
+    linear-gradient(180deg, #f7f2ea 0%, #efe6d8 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.layout-container {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(255, 253, 250, 0.7) 0%, rgba(241, 234, 223, 0.82) 100%);
+  min-height: calc(100vh - 80px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 33, 43, 0.22);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 33, 43, 0.35);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 16px 28px;
+  }
+}
