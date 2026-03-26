@@ -2,15 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePlatformStore } from '../store/platformStore';
 
+const chartPalette = ['#165d86', '#2f7a68', '#4d9ac1', '#7bb39f', '#d4e6f3'];
+
+const parseNumericValue = (value) => {
+  if (typeof value === 'number') return value;
+  const normalized = String(value).replace('%', '').replace('s', '');
+  return Number.parseFloat(normalized) || 0;
+};
+
 export const Dashboard = () => {
-  const { currentPlayer, overview, tournaments, liveGames, activityFeed, matchmaking } = usePlatformStore((state) => state.data);
+  const { currentPlayer, overview, tournaments, liveGames, activityFeed, matchmaking, leaderboard, profile } = usePlatformStore((state) => state.data);
+
+  const departmentLeaders = [...leaderboard.departments].sort((a, b) => b.score - a.score);
+  const maxDepartmentScore = Math.max(...departmentLeaders.map((item) => item.score), 1);
+  const topPlayers = [...leaderboard.weekly].sort((a, b) => b.points - a.points).slice(0, 5);
+  const maxPlayerPoints = Math.max(...topPlayers.map((item) => item.points), 1);
+  const maxSpectators = Math.max(...liveGames.map((game) => game.spectators), 1);
+  const timeBreakdown = currentPlayer.timeControlBreakdown.map((item) => ({
+    ...item,
+    winRateValue: parseNumericValue(item.winRate),
+  }));
+  const maxGames = Math.max(...timeBreakdown.map((item) => item.games), 1);
+  const coinImpact = profile.matchHistory.map((match) => {
+    const coinMatch = match.change.match(/([+-]\d+)\s*coins/i);
+    return {
+      ...match,
+      coinDelta: coinMatch ? Number.parseInt(coinMatch[1], 10) : 0,
+    };
+  });
+  const maxCoinSwing = Math.max(...coinImpact.map((match) => Math.abs(match.coinDelta)), 1);
 
   return (
     <div className="page-shell">
       <section className="hero-card">
         <div className="hero-copy">
-          <span className="kicker">MYCPE ONE Chess Platform</span>
+          <span className="kicker">MYCPE ONE CHESS MASTER</span>
           <h1>Friendly competition with real momentum.</h1>
+          <div className="hero-tags">
+            <span className="hero-tag">Live ladder</span>
+            <span className="hero-tag">Private matches</span>
+            <span className="hero-tag">Bot practice</span>
+          </div>
           <div className="hero-actions">
             <Link className="btn btn-primary" to="/play">
               Play now
@@ -48,6 +80,162 @@ export const Dashboard = () => {
             <p>{item.detail}</p>
           </article>
         ))}
+      </section>
+
+      <section className="analytics-grid">
+        <article className="panel analytics-panel analytics-panel-wide">
+          <div className="panel-heading">
+            <div>
+              <span className="kicker">Departments</span>
+              <h2>Standings by score</h2>
+            </div>
+          </div>
+          <div className="bar-list">
+            {departmentLeaders.map((department, index) => (
+              <div key={department.name} className="bar-row">
+                <div className="bar-copy">
+                  <strong>{department.name}</strong>
+                  <small>{department.leader}</small>
+                </div>
+                <div className="bar-track">
+                  <div
+                    className="bar-fill"
+                    style={{
+                      width: `${(department.score / maxDepartmentScore) * 100}%`,
+                      background: chartPalette[index % chartPalette.length],
+                    }}
+                  />
+                </div>
+                <span className="bar-value">{department.score}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="panel analytics-panel">
+          <div className="panel-heading">
+            <div>
+              <span className="kicker">Leaderboard</span>
+              <h2>Top player points</h2>
+            </div>
+          </div>
+          <div className="column-chart">
+            {topPlayers.map((player, index) => (
+              <div key={player.name} className="column-item">
+                <div className="column-value">{player.points}</div>
+                <div className="column-track">
+                  <div
+                    className="column-fill"
+                    style={{
+                      height: `${(player.points / maxPlayerPoints) * 100}%`,
+                      background: chartPalette[index % chartPalette.length],
+                    }}
+                  />
+                </div>
+                <div className="column-label">{player.name.split(' ')[0]}</div>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="panel analytics-panel">
+          <div className="panel-heading">
+            <div>
+              <span className="kicker">Live interest</span>
+              <h2>Spectators per game</h2>
+            </div>
+          </div>
+          <div className="bar-list">
+            {liveGames.map((game, index) => (
+              <div key={game.id} className="bar-row">
+                <div className="bar-copy">
+                  <strong>{game.white.split(' ')[0]} vs {game.black.split(' ')[0]}</strong>
+                  <small>{game.mode}</small>
+                </div>
+                <div className="bar-track">
+                  <div
+                    className="bar-fill"
+                    style={{
+                      width: `${(game.spectators / maxSpectators) * 100}%`,
+                      background: chartPalette[index % chartPalette.length],
+                    }}
+                  />
+                </div>
+                <span className="bar-value">{game.spectators}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="panel analytics-panel">
+          <div className="panel-heading">
+            <div>
+              <span className="kicker">Personal form</span>
+              <h2>Performance by mode</h2>
+            </div>
+          </div>
+          <div className="dual-metric-list">
+            {timeBreakdown.map((mode, index) => (
+              <div key={mode.mode} className="dual-metric-row">
+                <div className="dual-metric-copy">
+                  <strong>{mode.mode}</strong>
+                  <small>{mode.games} games</small>
+                </div>
+                <div className="dual-bars">
+                  <div className="mini-track">
+                    <div
+                      className="mini-fill"
+                      style={{
+                        width: `${(mode.games / maxGames) * 100}%`,
+                        background: chartPalette[index % chartPalette.length],
+                      }}
+                    />
+                  </div>
+                  <div className="mini-track win-track">
+                    <div
+                      className="mini-fill"
+                      style={{
+                        width: `${mode.winRateValue}%`,
+                        background: '#2f7a68',
+                      }}
+                    />
+                  </div>
+                </div>
+                <span className="dual-metric-value">{mode.winRate}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="panel analytics-panel">
+          <div className="panel-heading">
+            <div>
+              <span className="kicker">Economy</span>
+              <h2>Recent coin impact</h2>
+            </div>
+          </div>
+          <div className="impact-list">
+            {coinImpact.map((match) => (
+              <div key={`${match.opponent}-${match.mode}-${match.result}`} className="impact-row">
+                <div className="impact-copy">
+                  <strong>{match.opponent}</strong>
+                  <small>{match.mode} · {match.result}</small>
+                </div>
+                <div className="impact-track">
+                  <div
+                    className={`impact-fill ${match.coinDelta >= 0 ? 'positive' : 'negative'}`}
+                    style={{
+                      width: `${(Math.abs(match.coinDelta) / maxCoinSwing) * 100}%`,
+                    }}
+                  />
+                </div>
+                <span className={`impact-value ${match.coinDelta >= 0 ? 'positive' : 'negative'}`}>
+                  {match.coinDelta > 0 ? `+${match.coinDelta}` : match.coinDelta}
+                </span>
+              </div>
+            ))}
+          </div>
+        </article>
       </section>
 
       <section className="content-grid two-third">
@@ -131,7 +319,7 @@ export const Dashboard = () => {
                   </p>
                 </div>
                 <div className="challenge-meta">
-                  <span>{challenge.expiresIn}</span>
+                  <span className="meta-chip">{challenge.expiresIn}</span>
                   <small>{challenge.message}</small>
                 </div>
               </div>
@@ -158,7 +346,7 @@ export const Dashboard = () => {
                   </p>
                 </div>
                 <div className="live-meta">
-                  <span>{game.spectators} watching</span>
+                  <span className="meta-chip">{game.spectators} watching</span>
                   <small>{game.tension}</small>
                 </div>
               </div>

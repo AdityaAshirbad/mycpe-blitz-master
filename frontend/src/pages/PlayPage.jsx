@@ -43,6 +43,11 @@ export const PlayPage = () => {
         <div className="hero-copy">
           <span className="kicker">Matchmaking and direct play</span>
           <h1>Start a game with the right stakes and context.</h1>
+          <div className="hero-tags">
+            <span className="hero-tag">Fast pairing</span>
+            <span className="hero-tag">Practice bots</span>
+            <span className="hero-tag">Custom stakes</span>
+          </div>
         </div>
         <div className="hero-aside">
           <div className="metric-stack">
@@ -178,6 +183,7 @@ export const PlayPage = () => {
                   {bot.title} - {bot.preferredMode}
                 </p>
                 <small>{bot.summary}</small>
+                <span className="meta-chip meta-chip-inline">{bot.difficulty}</span>
                 <button
                   type="button"
                   className="btn btn-primary"
@@ -218,7 +224,7 @@ export const PlayPage = () => {
                   </p>
                 </div>
                 <div className="directory-meta">
-                  <span>{player.status}</span>
+                  <span className="meta-chip">{player.status}</span>
                   <button type="button" className="btn btn-secondary" onClick={() => openGame(player.name)}>
                     Challenge
                   </button>

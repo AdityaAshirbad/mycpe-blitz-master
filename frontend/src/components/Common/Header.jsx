@@ -12,9 +12,13 @@ export const Header = () => {
         <button type="button" className="ghost-button mobile-only" onClick={toggleSidebar} aria-label="Toggle navigation">
           Menu
         </button>
-        <div>
+        <div className="brand-mark" aria-hidden="true">
+          CM
+        </div>
+        <div className="brand-copy">
           <span className="kicker">MYCPE ONE</span>
-          <h2>Chess Command</h2>
+          <h2>CHESS MASTER</h2>
+          <p>Competitive play for modern teams.</p>
         </div>
       </div>
 
@@ -26,6 +30,10 @@ export const Header = () => {
         <div className="summary-pill">
           <span>Rank</span>
           <strong>{player.title || player.league}</strong>
+        </div>
+        <div className="summary-pill">
+          <span>Status</span>
+          <strong>{player.status}</strong>
         </div>
         <div className="summary-pill player-pill">
           <img src={player.avatar} alt={player.name} />

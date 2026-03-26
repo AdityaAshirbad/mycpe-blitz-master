@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { usePlayerStore } from '../../store/playerStore';
 import { useUIStore } from '../../store/uiStore';
 
 const navItems = [
@@ -12,6 +13,7 @@ const navItems = [
 
 export const Sidebar = () => {
   const sidebarOpen = useUIStore((state) => state.sidebarOpen);
+  const player = usePlayerStore((state) => state.player);
 
   return (
     <aside className={`app-sidebar ${sidebarOpen ? 'open' : ''}`}>
@@ -29,6 +31,22 @@ export const Sidebar = () => {
             </NavLink>
           ))}
         </nav>
+      </div>
+
+      <div className="sidebar-panel sidebar-spotlight">
+        <span className="kicker">Quick Status</span>
+        <h3>{player.name}</h3>
+        <div className="sidebar-metrics">
+          <div>
+            <span>Points</span>
+            <strong>{player.points}</strong>
+          </div>
+          <div>
+            <span>Wins</span>
+            <strong>{player.wins}</strong>
+          </div>
+        </div>
+        <p>{player.streak} match streak and climbing toward {player.nextTitle}.</p>
       </div>
     </aside>
   );
